@@ -1,0 +1,9 @@
+[book]
+authors = ["dsaime"]
+language = "ru"
+multilingual = false
+src = "src"
+title = "Документация к проекту Nice Pea Chat"
+
+[build]
+build-dir = "mdbook"
