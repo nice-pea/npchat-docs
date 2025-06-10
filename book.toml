@@ -6,4 +6,4 @@ src = "src"
 title = "Документация к проекту Nice Pea Chat"
 
 [build]
-build-dir = "mdbook"
+build-dir = "docs"
