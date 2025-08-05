@@ -37,6 +37,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc.js"></script>
@@ -93,10 +94,13 @@
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -147,7 +151,12 @@
 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -1143,6 +1152,11 @@ id int
 name string # &lt;-- наверное будет локализация, так что без этого поля обойдемся
 )</p>
 <p>А ограничения будут отражаться в коде.</p>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="Доставка-и-развертование"><a class="header" href="#Доставка-и-развертование">Доставка и развертование</a></h3>
+<p>Рабочая директория проекта <code>/opt/npchat</code>, доступ на запись есть только у пользователей группы <code>npchat</code>.</p>
+<p>Параметра для запуска приложения распологаются в <code>/opt/npchat/.env.production</code>, читать может только группа.</p>
+<p>Новые файлы в директории создаются с группой npchat, так как установлен <a href="https://man.archlinux.org/man/setgid.2.ru">setgid</a>.</p>
+<p>В корне рабочей директории располагаются директории релизов, куда помещается код или бинарные файлы соборок (прим.: /opt/npchat/v0.0.1-alpha).</p>
 
                     </main>
 
@@ -1184,6 +1198,7 @@ name string # &lt;-- наверное будет локализация, так 
             window.setTimeout(window.print, 100);
         });
         </script>
+
 
     </div>
     </body>

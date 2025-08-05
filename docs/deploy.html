@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Соглашение по git - Документация к проекту Nice Pea Chat</title>
+        <title>Деплой - Документация к проекту Nice Pea Chat</title>
 
 
         <!-- Custom HTML head -->
@@ -175,40 +175,20 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="Соглашение-по-git"><a class="header" href="#Соглашение-по-git">Соглашение по git</a></h1>
-<h2 id="Формат-коммитов-в-master"><a class="header" href="#Формат-коммитов-в-master">Формат коммитов в master</a></h2>
-<p>Название коммита:</p>
-<pre><code>[номер задачи из таск-трэкера] [Название задачи] (#[номер PR с правкой по задаче])
-</code></pre>
-<p>Пример:</p>
-<pre><code>50078921 Добавить регистрацию пользователей (#42)
-</code></pre>
-<p>Если коммит большой, к нему стоит добавить описание, значительные изменения разделять новой строкой, начинающейся с <code>*</code>:</p>
-<pre><code>* Обновлен способ обработки ошибок в роутере
-
-* Стандартный роутер заменен на "libname"
-</code></pre>
-<h2 id="Формат-веток"><a class="header" href="#Формат-веток">Формат веток</a></h2>
-<p>В названии ветки указывать автора, а для разделения слов использовать минусы:</p>
-<pre><code>[автор]/[номер задачи из таск-трэкера]-[Название-задачи]
-</code></pre>
-<p>Пример:</p>
-<pre><code>saime/50078921-Добавить-регистрацию-пользователей
-</code></pre>
-<h2 id="Формат-коммитов-в-ветки-авторов"><a class="header" href="#Формат-коммитов-в-ветки-авторов">Формат коммитов в ветки авторов</a></h2>
-<p><em>Формат коммитов в ветки автором не установлен</em></p>
+                        <h3 id="Доставка-и-развертование"><a class="header" href="#Доставка-и-развертование">Доставка и развертование</a></h3>
+<p>Рабочая директория проекта <code>/opt/npchat</code>, доступ на запись есть только у пользователей группы <code>npchat</code>.</p>
+<p>Параметра для запуска приложения распологаются в <code>/opt/npchat/.env.production</code>, читать может только группа.</p>
+<p>Новые файлы в директории создаются с группой npchat, так как установлен <a href="https://man.archlinux.org/man/setgid.2.ru">setgid</a>.</p>
+<p>В корне рабочей директории располагаются директории релизов, куда помещается код или бинарные файлы соборок (прим.: /opt/npchat/v0.0.1-alpha).</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="makefile.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="design_additional.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="design.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -216,13 +196,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="makefile.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="design_additional.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="design.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>
