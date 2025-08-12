@@ -179,6 +179,7 @@
 <p>Postgresql используется как основная база банных, на момент написания документации версия <code>13.20</code>.</p>
 <p>Кластер работает без контейнеризации, pgsql установлен в системе.</p>
 <p>Приложение npchat подключается к БД без пароля, так работает только на <code>localhost</code>. Для возможности подключаться извне сервера (из интернета), был создан firwalld-сервис <code>npcdbservice</code>, открывающий порт <code>5444</code> и установлены соответствующие настройки в <code>/var/lib/pgsql/data/postgresql.conf</code>.</p>
+<p>Для удобства работы с production базой данных используется веб-панел, подробнее в <a href="infra.html">infra.md</a>.</p>
 <h3 id="Миграции"><a class="header" href="#Миграции">Миграции</a></h3>
 <p>Посмотреть актуальную версию схемы БД: <code>SELECT * FROM "schema_migrations"</code>.</p>
 <p>Для применения миграций используется cli-приложение <a href="https://github.com/golang-migrate/migrate">migrate</a>, а также для создания пустых up/down файлов в директории <a href="https://github.com/nice-pea/npchat/tree/master/infra">npchat/infra/pgsql/init</a>.</p>
