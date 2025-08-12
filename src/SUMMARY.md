@@ -6,6 +6,6 @@
 - [Дизайн(устарело)](design.md)
 - [Дополнение дизайна(устарело)](design_additional.md)
 - [Деплой](deploy.md)
-- [Базаданных](database.md)
+- [База данных](database.md)
 - [Инфраструктура](infra.md)
 
