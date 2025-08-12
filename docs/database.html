@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Деплой - Документация к проекту Nice Pea Chat</title>
+        <title>Базаданных - Документация к проекту Nice Pea Chat</title>
 
 
         <!-- Custom HTML head -->
@@ -175,28 +175,20 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h3 id="Доставка-и-развертование"><a class="header" href="#Доставка-и-развертование">Доставка и развертование</a></h3>
-<p>Рабочая директория проекта <code>/opt/npchat</code>, доступ на запись есть только у пользователей группы <code>npchat</code>.</p>
-<p>Параметра для запуска приложения распологаются в <code>/opt/npchat/.env.production</code>, читать может только группа.</p>
-<p>Новые файлы в директории создаются с группой npchat, так как установлен <a href="https://man.archlinux.org/man/setgid.2.ru">setgid</a>.</p>
-<p>В корне рабочей директории располагаются директории релизов, куда помещается код или бинарные файлы сборок (прим.: /opt/npchat/v0.0.1-alpha).</p>
-<p>Приложение запускается внутри docker-контейнера с именем <code>npchat.api</code>, образ для запуска контейнера создается с версией, которая совпадает с названием директории.</p>
-<p>Автоматизация развертования организована в 3 этапа:</p>
-<ol>
-<li>Посредством github-actions или вручную (<code>git tag tagname &amp;&amp; git  push origin $_</code>), создать тэг с версией в репозитории.</li>
-<li>Запустить workflow, который отправляет код тэга на сервер, в соответствующую директорию и собирает docker-образ.</li>
-<li>Запустить workflow, который запускает контейнер из образа, предварительно удалив существующий контейнер. В случае ошибки запуска нового контейнера, workflow запустит старый контейнер из прошлой рабочей версии. Если прошлая версия не запустилась, будет оправлено emergency оповещение.</li>
-</ol>
+                        <h1 id="База-данных"><a class="header" href="#База-данных">База данных</a></h1>
+<p>Postgresql используется как основная база банных, на момент написания документации версия <code>13.20</code>.</p>
+<p>Кластер работает без контейнеризации, pgsql установлен в системе.</p>
+<p>Приложение npchat подключается к БД без пароля, так работает только на <code>localhost</code>. Для возможности подключаться извне сервера (из интернета), был создан firwalld-сервис <code>npcdbservice</code>, открывающий порт <code>5444</code> и установлены соответствующие настройки в <code>/var/lib/pgsql/data/postgresql.conf</code>.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="design_additional.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="deploy.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="database.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="infra.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -206,11 +198,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="design_additional.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="deploy.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="database.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="infra.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
