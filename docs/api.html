@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Инфраструктура - Документация к проекту Nice Pea Chat</title>
+        <title>API - Документация к проекту Nice Pea Chat</title>
 
 
         <!-- Custom HTML head -->
@@ -175,41 +175,22 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="Инфраструктура"><a class="header" href="#Инфраструктура">Инфраструктура</a></h1>
-<p>Код инфраструктры хранится в своем <a href="https://github.com/nice-pea/infra">репозитортии</a>.</p>
-<p>Рабочая директория на сервере - <code>/opt/npchat/infra</code>.</p>
-<p>Для обновления кода используется ручной подход с <code>git pull</code>.</p>
-<p>Резвертывание просходит вручную. Пример с запуском обновленной кофигурации traefik:</p>
-<pre><code class="language-sh">cd /opt/npchat/infra
-git pull
-docker compose -f traefik/docker-compose.yaml restart
-</code></pre>
-<h1 id="Ключевые-компоненты"><a class="header" href="#Ключевые-компоненты">Ключевые компоненты</a></h1>
-<h3 id="traefik---reverse-proxy"><a class="header" href="#traefik---reverse-proxy">Traefik - Reverse proxy</a></h3>
-<p>Документация: https://doc.traefik.io/traefik/</p>
-<p>Доступ: https://traefik.dsaime.ru/</p>
-<h3 id="grafana---Мониторинг"><a class="header" href="#grafana---Мониторинг">Grafana - Мониторинг</a></h3>
-<p>Документация: https://grafana.com/docs/grafana/latest/</p>
-<p>Доступ: https://grafana.dsaime.ru/</p>
-<h3 id="prometheus---Сбор-и-хранение-метрик"><a class="header" href="#prometheus---Сбор-и-хранение-метрик">Prometheus - Сбор и хранение метрик</a></h3>
-<p>Документация: https://prometheus.io/docs/introduction/overview/</p>
-<h3 id="loki---Сбор-и-хранение-логов"><a class="header" href="#loki---Сбор-и-хранение-логов">Loki - Сбор и хранение логов</a></h3>
-<p>Документация: https://grafana.com/docs/loki/latest/</p>
-<h3 id="adminer---database-management-tool"><a class="header" href="#adminer---database-management-tool">Adminer - Database management tool</a></h3>
-<p>Сайт: https://www.adminer.org/en/</p>
-<p>Доступ: https://adminer.dsaime.ru/</p>
+                        <h1 id="api"><a class="header" href="#api">API</a></h1>
+<p>TODO: Документация к API по примеру:</p>
+<ul>
+<li>https://ats2-wiki.tele2.ru/open_api/</li>
+<li>https://www.amocrm.ru/developers/content/chats/chat-api-reference</li>
+<li>Правила из https://api.hh.ru/openapi/redoc</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="database.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="infra.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="api.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -217,13 +198,10 @@ docker compose -f traefik/docker-compose.yaml restart
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="database.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="infra.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="api.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>
